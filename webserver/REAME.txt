@@ -1,6 +1,0 @@
-- Cài đặt hệ điều hành Ubuntu 14.04 LTS x64
-- Cài đặt python==2.7.13
-- Cài đặt Django==1.8.7
-- Giải nén file webserver.zip trong thư mục SOURCE vào /var/www
-- Vận hành: /var/www/webserver:
-python ./manager.py runserver

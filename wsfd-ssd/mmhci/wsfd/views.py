@@ -48,19 +48,19 @@ def detect(request):
         cc, scores, bboxes = gb_detector.dectectFace(img)
         res = {}
 
-        if len(scores) > 1:
+        if len(scores) > 0:
             visualization.bboxes_draw_on_img(img, cc, scores, bboxes, 
                 visualization.colors, class_names=['none-face', 'face'])
             skimage.io.imsave(tmp_filename, img)
             bboxes = normalizeBBoxes(bboxes, img.shape[1], img.shape[0])
 
         res['code'] = config.CODE_SUCCESS
-        res['num'] = len(scores)
         res['coordinates'] = []
         for ii in range(len(scores)):
             if scores[ii] >= config.SCORE_THRES:
                 y1, x1, y2, x2 = bboxes[ii]
                 res['coordinates'].append("%d,%d,%d,%d"%(x1, y1, x2 - x1, y2 - y1))
+        res['num'] = len(res['coordinates'])
         res["url"] = '/' + tmp_filename
     except:
         res = {'code':config.CODE_SYS_ERR}
