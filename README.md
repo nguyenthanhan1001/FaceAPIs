@@ -32,3 +32,9 @@ Sau đó chép vào thư mục /var/www/vgg16 với tên "vggface.npy"
 Sau đó chép vào thư mục /var/www/vgg16 với tên "model-tf-50"
 - Vào thư mục /var/www/mmhci:
 python ./manager.py runserver
+
+# Thư mục moduls:
+- vggface: face recognition, fc7-extract
+- SSDFace: face detection
+- compose_tracklets: compose from recognised meta
+- retrain_classification: retrain for new #uid

@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>retrieval</title>
+  <link rel="icon" href="/static/image/meo.ico" type="image/x-icon">
+  <style>
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+    }
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        max-width: 300;
+        max-height: 200;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <link href="/static/css/core.css" rel="stylesheet">
+    <link href="/static/css/cognitiveservicesdemos.css" rel="stylesheet">
+    <section class="section section-size2 section-slate09">
+      <div class="row">
+        <div class="column medium-10 medium-centered large-centered large-8 text-center">
+          <h2>MM-HCI Face API</h2>
+        <p>This is demo website using face API from thesis of 
+          <a>Thanh-An NGUYEN </a> and
+          <a>Phat-Tai NGUYEN </a> <br/>
+        There are two publised APIs: Face Detection using SSD300 and Face Recognition using VGG16 + Retrained classification layers.
+        </p>
+      </div>
+    </div>
+    <div class="row column">
+      <h6 class="centered-text-with-hr">
+        <span>Face Retrieval</span>
+      </h6>
+    </div><br>
+    <div class="row column row-size2">
+      <form method="POST" class="demo-image-form" id="face-detection-form" action="{{ request.build_absolute_uri }}" enctype="multipart/form-data">
+        <div>
+          <div class="row row-size1">
+            <div class="column medium-6">
+              <div class="row column text-center">
+                <div class="demo-img-container">
+                  <div class="demo-img-wrapper">
+                    <img src="{{uploaded_image}}" alt="" role="presentation">
+                  </div>
+                </div>
+              </div>
+              <div class="row row-size1 column">
+                <input type="hidden"> 
+                  <div class="row row-size1 cs-form">
+                    <div class="column medium-3">
+                      <label class="button button-little button-block button-upload">
+                        Browse
+                        <input type="file" name="img_retrieval" accept="image/*">
+                      </label>
+                    </div>
+                    <div class="column medium-3">
+                      <input type="submit" class="button button-little button-block" value="Retrieval">
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="column medium-6">
+              <div class="demo-img-results">
+                <div class="cs-demo-json">
+                  <pre class="prettyprint prettyprinted">
+                    <code>
+                      <span class="typ">Detection</span><span class="pln"> result</span><span class="pun">:</span><br><span class="pln">JSON</span><span class="pun">:</span><br><span class="pln"> </span>
+                      <span class="jsonResult">{{json_result|safe}}</span>
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row column">
+      <h6 class="centered-text-with-hr">
+        <span>Retrieval Results</span>
+      </h6>
+      {{retrieval_results|safe}}
+      <!--
+      <div class="gallery">
+          <img src="/media/3.jpg" width="300" height="200">
+      </div>
+      -->
+
+    </div>
+    
+    <div class="row row-divided column">
+      <div class="row column">
+        <h4>For more details?</h4>
+      </div>
+      <div class="row column row-size2">
+        <a class="button button-secondary button-chevron" href="https://drive.google.com/open?id=1hzBM73S4RYiBLRWc_dUOE9Dwev64fGY5YEx4e1C4Nd8"> Documentation </a>
+      </div>
+    </div>
+    <br/>
+    <div class="row row-size1 column">
+      <p> <i> This website uses template of <a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/">Microsoft Face API</a> </i>
+      </p>
+    </div>
+  </main>                  
+</body>
+</html>

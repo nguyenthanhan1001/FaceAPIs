@@ -1,0 +1,73 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>mmhci</title>
+  <link rel="icon" href="/static/image/meo.ico" type="image/x-icon">
+</head>
+<body>
+    <link href="/static/css/core.css" rel="stylesheet">
+    <link href="/static/css/cognitiveservicesdemos.css" rel="stylesheet">
+    <section class="section section-size2 section-slate09">
+      <div class="row">
+        <div class="column medium-10 medium-centered large-centered large-8 text-center">
+          <h2>MM-HCI Face API</h2>
+        <p>This is demo website using face API from thesis of 
+          <a>Thanh-An NGUYEN </a> and
+          <a>Phat-Tai NGUYEN </a> <br/>
+        There are two publised APIs: Face Detection using SSD300 and Face Recognition using VGG16 + Retrained classification layers.
+        </p>
+      </div>
+    </div>
+    <div class="row column">
+      <h6 class="centered-text-with-hr">
+        <span>Face Web APIs</span>
+      </h6>
+    </div><br>
+    <div class="row column row-size2">
+          <div class="column medium-6">
+            <div class="row column text-center">
+              <div class="demo-img-container">
+                <div class="demo-img-wrapper">
+                  <img src="/static/image/cover_detection.jpg" alt="" role="presentation">
+                </div>
+              </div>
+            </div>
+            <br/>
+            <a class="button button-little button-block"
+                   href="{{request.build_absolute_uri}}detect/">
+                    Detection Site
+            </a>
+          </div>
+
+          <div class="column medium-6">
+            <div class="row column text-center">
+              <div class="demo-img-container">
+                <div class="demo-img-wrapper">
+                  <img src="/static/image/cover_recognition.jpg" alt="" role="presentation">
+                </div>
+              </div>
+            </div>
+            <br/>
+            <a class="button button-little button-block"
+                   href="{{request.build_absolute_uri}}recognise/">
+                    Recognition Site
+            </a>
+            </div>
+          </div>
+    </div>
+    <div class="row row-divided column">
+      <div class="row column">
+        <h4>For more details?</h4>
+      </div>
+      <div class="row column row-size2">
+        <a class="button button-secondary button-chevron" href="https://drive.google.com/open?id=1hzBM73S4RYiBLRWc_dUOE9Dwev64fGY5YEx4e1C4Nd8"> Documentation </a>
+      </div>
+    </div>
+    <br/>
+    <div class="row row-size1 column">
+      <p> <i> This website uses template of <a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/">Microsoft Face API</a> </i>
+      </p>
+    </div>
+  </section>
+</body>
+</html>
